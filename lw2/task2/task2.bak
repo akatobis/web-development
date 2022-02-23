@@ -15,5 +15,5 @@ BEGIN
     THEN
       WRITELN('The British are coming by land.')
     ELSE
-      WRITELN('SaraDeadInSaid')
+      WRITELN('SaraDedInSaid')
 END.
