@@ -4,7 +4,6 @@ USES
 VAR
   Str: STRING;
 BEGIN
-  WRITELN('Content-Type: text/plain');
   WRITELN;
   Str := GetEnv('QUERY_STRING');
   IF Str = 'lanterns=1'

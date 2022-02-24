@@ -1,8 +1,10 @@
 <?php
 header('Content-Type: text/plain');
-$text = $_GET["text"];
-$text = trim($text, ' ');
-while(strpos($text, '  '))
-   $text = str_replace("  ", " ", $text);
-echo $text;
+function RemoveExtraBlanks($text){
+   $text = trim($text, ' ');
+   while(strpos($text, '  '))
+      $text = str_replace("  ", " ", $text);
+   echo $text;
+}
 
+echo RemoveExtraBlanks($_GET['text']);

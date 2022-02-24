@@ -1,7 +1,6 @@
 PROGRAM PrintPath(INPUT, OUTPUT);
 USES Dos;
 BEGIN{PrintPath}
-  WRITELN('Content-Type: text/plain');
   WRITELN;
   WRITELN(GetEnv('REQUEST_METHOD'));
   WRITELN(GetEnv('QUERY_STRING'));
