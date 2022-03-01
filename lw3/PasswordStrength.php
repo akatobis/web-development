@@ -1,58 +1,58 @@
 <?php
-function PasswordStrength($password){
-   $len_password = strlen($password);
-   $reliability = 0;
-   $count_num;
-   $count_upper_case_char;
-   $count_lower_case_chars;
-   $repetitions;
 
-   for($i = 0; $i <= $len_password; $i++){
-      if(is_numeric($password[$i])){
-         $count_num++;
-      }
-      if(ctype_upper($password[$i])){
-         $count_upper_case_chars++;
-      }
-      if(ctype_lower($password[$i])){
-         $count_lower_case_chars++;
-      }
-   }
+function PasswordStrength(string $password): ?int
+{
+    $lenPassword = strlen($password);
+    $reliability = 0;
+    $countNum = 0;
+    $countUpperCaseChars = 0;
+    $countLowerCaseChars = 0;
 
-   if($len_password <> 0){
-      $reliability = $len_password * 4; //прибавляем количество символов * 4
-   }
+    for ($i = 0; $i <= $lenPassword; $i++)
+    {
+        if (is_numeric($password[$i]))
+            $countNum++;
 
-   if($count_num <> 0){
-      $reliability += $count_num * 4; //прибфвляем количество цифр * 4
-   }
+        if (ctype_upper($password[$i]))
+            $countUpperCaseChars++;
 
-   if($count_upper_case_chars <> 0){
-      if(!ctype_upper($password)){
-         $reliability += ($len_password - $count_upper_case_chars) * 2; //прибавляем количество символов - кол-во в верх рег *2
-      }
-   }
+        if (ctype_lower($password[$i]))
+            $countLowerCaseChars++;
+    }
 
-   if($count_lower_case_chars <> 0){
-      if(!ctype_lower($password)){
-         $reliability += ($len_password - $count_lower_case_chars) * 2; ////прибавляем количество символов - кол-во в ниж рег *2
-      }
-   }
+    if ($lenPassword <> 0)
+        $reliability = $lenPassword * 4; //прибавляем количество символов * 4
 
-   if(ctype_alpha($password)){
-      $reliability -= $len_password; //если все буквы, то вычитаем кол симв
-   }
+    if ($countNum <> 0)
+        $reliability += $countNum * 4; //прибавляем количество цифр * 4
 
-   if(is_numeric($password)){
-      $reliability -= $len_password; //если все цифры, то вычитаем кол симв
-   }
+    if ($countUpperCaseChars <> 0)
+        if (!ctype_upper($password))
+            $reliability += ($lenPassword - $countUpperCaseChars) * 2; //прибавляем количество символов - кол-во символов в верхнем регистре * 2
 
-   foreach (count_chars($password, 1) as $i => $val) {
-      if($val <> 1){
-         $reliability -= $val; //вычитаем кол повторяющихся симв
-      }
-   }
-   return $reliability;
+    if ($countLowerCaseChars <> 0)
+        if(!ctype_lower($password))
+            $reliability += ($lenPassword - $countLowerCaseChars) * 2; //прибавляем количество символов - кол-во в ниж рег * 2
+
+    if (ctype_alpha($password))
+        $reliability -= $lenPassword; //если все буквы, то вычитаем кол-во символов
+
+    if (is_numeric($password))
+        $reliability -= $lenPassword; //если все цифры, то вычитаем кол-во символов
+
+    foreach (count_chars($password, 1) as $i => $value) 
+    {
+        if ($value <> 1)
+            $reliability -= $value; //вычитаем кол-во повторяющихся символов
+    }
+    return $reliability;
 }
 
-echo PasswordStrength($_GET['password']);
+$text = $_GET['password'];
+if ($text !== null)
+    if ($text === '')
+        echo 'Введите строку';
+    else
+        echo PasswordStrength($text);
+else
+    echo 'Введите данные';
