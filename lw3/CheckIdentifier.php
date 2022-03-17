@@ -10,7 +10,7 @@ function CheckIdent(string $text): void
     }
     for ($i = 1; $i < strlen($text); $i++)
     {
-        if(!ctype_alpha($text[$i]) && !is_numeric($text[$i]))
+        if(!ctype_alpha($text[$i]) && !is_numeric($text[$i]) && ($text[$i] === '&'))
         {
             echo 'no символ ', $text[$i], ' является недопустимым символом в индендефикаторе';
             return;
@@ -22,7 +22,7 @@ function CheckIdent(string $text): void
 $text = $_GET['identifier'];
 if ($text !== null)
     if ($text === '')
-        echo 'Введите строку';
+        echo 'Введите идендикатор';
     else
         CheckIdent($text);
 else

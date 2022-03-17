@@ -1,13 +1,19 @@
 PROGRAM WriteName(INPUT, OUTPUT);
 USES
   DOS;
+VAR
+  Position: INTEGER;
+  Name: STRING;
 BEGIN{WriteName}
   WRITELN;
-  IF GetEnv('QUERY_STRING') <> ''
+  Position := POS('name=', GetEnv('QUERY_STRING'));
+  IF (GetEnv('QUERY_STRING') = '') OR (GetEnv('QUERY_STRING') = 'name=')
   THEN
-    IF GetEnv('QUERY_STRING') = 'name='
+    WRITELN('Hello, Anonymus!');
+  Name := COPY(GetEnv('QUERY_STRING'), Position + 5);
+  IF COPY(GetEnv('QUERY_STRING'), 1, 5) = 'name='
+  THEN
+    IF Name <> ''
     THEN
-      WRITELN('Hello Anonymous!')
-    ELSE
-      WRITELN('Hello, dear ', COPY(GetEnv('QUERY_STRING'), POS('name=', GetEnv('QUERY_STRING')) + 5), '!')
+      WRITELN('Hello, dear ', Name, '!')
 END.{WriteName}

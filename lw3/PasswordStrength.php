@@ -6,7 +6,7 @@ function PasswordStrength(string $password): ?int
     $reliability = 0;
     $countNum = 0;
     $countUpperCaseChars = 0;
-    $countLowerCaseChars = 0;
+    $countLowerCaseChars = 0;  //aAdsD
 
     for ($i = 0; $i <= $lenPassword; $i++)
     {

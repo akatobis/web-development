@@ -10,7 +10,7 @@ function RemoveExtraBlanks(string $text): ?string
 
 $text = $_GET['text'];
 if ($text !== null)
-    if ($text == '')
+    if ($text === '')
         echo 'Введите строку';
     else
         echo RemoveExtraBlanks($text);
