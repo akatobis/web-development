@@ -6,7 +6,7 @@ h1{
     font-family: 'Roboto';
 }
 
-.span_pink{
+.pink{
     color: #EE58B6;
 }
 
@@ -16,9 +16,11 @@ h1{
 
 .point_not_decoration{
     list-style-type: none;
+    font: 500 'Montserrat', sans-serif;
 }
 
 .point__link_not_decoration{
+    font: 500 'Montserrat', sans-serif;
     text-decoration: none;
     color: #000;
 }
