@@ -24,8 +24,6 @@
 .main-title
 {
     font: 600 100px/122.35% 'Montserrat', sans-serif;
-    /* max-height: 138px; */
-    /* max-width: 697px; */
 }
 
 .text
@@ -127,7 +125,8 @@
 
 .main-block__text
 {
-    margin: 4.69px;
+    margin-left: 4.69px;
+    margin-top: 20px;
     max-width: 585px;
     font: 400 26px/31px 'Roboto Condensed', sans-serif;
 }
@@ -237,14 +236,7 @@
     font: 500 48px/126.06% 'Montserrat', sans-serif;
 }
 
-.motivation_block1__simple-text
-{
-    font: 400 18px/24.3px 'Roboto Condensed', sans-serif;
-    margin-top: 25.97px;
-    max-width: 574px;
-}
-
-.motivation-block2__simple-text
+.motivation-block__simple-text
 {
     font: 400 18px/24.3px 'Roboto Condensed', sans-serif;
     margin-top: 26px;
@@ -288,6 +280,7 @@
     border-radius: 7.35723px;
     max-width: 358px;
     max-height: 190px;
+    min-height: 190px;
     background-color: #000;
     color: #fff;
     -webkit-box-sizing: border-box;
@@ -351,142 +344,4 @@
 .end__text
 {
     font: 700 30.8354px/122.33% 'Montserrat', sans-serif;
-}
-
-@media screen and (max-width:1630px) 
-{
-    .main-title
-    {
-        font-size: 62px;
-    }
-
-    .main-block
-    {
-        padding: 76px 40px 0 40px;
-    }
-
-    .main-block__info
-    {
-        margin-right: 70px;
-    }
-
-    .main-block__text
-    {
-        font-size: 20px;
-        max-width: 360px;
-    }
-}
-
-@media screen and (max-width:1365px) {
-    .main-title
-    {
-        font-size: 57px;
-    }
-
-    .main-block__info
-    {
-        margin-right: 50px;
-    }
-}
-
-@media screen and (max-width:1300px) {
-    .main-block
-    {
-        justify-content: space-around;
-    }
-
-    .main-title
-    {
-        font-size: 60px;
-    }
-
-    .main_image
-    {
-        max-width: 600px;
-    }
-
-    .main-block__info
-    {
-        margin-right: 0;
-    }
-}
-
-@media screen and (max-width:1200px) {
-    .top
-    {
-        flex-direction: column;
-    }
-
-    .top__interactive
-    {
-        margin-top: 10px;
-    }
-
-    .main-title
-    {
-        font-size: 50px;
-    }
-
-    .main_image
-    {
-        max-width: 540px;
-    }
-
-    .main-block__info
-    {
-        margin-right: 10px;
-    }
-
-    .for-whom
-    {
-        justify-content: space-evenly;
-    }
-
-    .for-whom__info
-    {
-        margin: 0;
-    }
-
-    .for-whom__description
-    {
-        font-size: 20px;
-    }
-
-    .motivation
-    {
-        padding: 40px 10px 0 10px;
-        padding-top: 40px;
-    }
-
-    .motivation_block1__num1
-    {
-        margin-left: 0;
-    }
-
-    .motivation_block2__num2
-    {
-        margin-right: 0;
-    }
-
-    .description
-    {
-        width: 800px;
-    }
-
-    .description__blocks
-    {
-        margin-top: 20px;
-    }
-
-    .description__block
-    {
-        margin: 0;
-        margin-left: 20px;
-        margin-top: 20px;
-    }
-
-    .end
-    {
-        margin-top: 150px;
-    }
 }
