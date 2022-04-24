@@ -1,0 +1,52 @@
+*
+{
+   margin: 0;
+}
+
+.get_file
+{
+   margin-top: 52px;
+   margin-left: 59px;
+}
+
+.get_file__enter_email
+{
+   margin-right: 53px;
+   width: 480px;
+   height: 64px;
+   box-sizing: border-box;
+   font: 500 18px 'Montserrat', sans-serif;
+   padding-left: 28px;
+   color: #999;
+   border: 1.35px solid #C0C0C0;
+   border-radius: 4px;
+   outline: none;
+}
+
+.get_file__enter_email::placeholder 
+{
+   color: #999;
+}
+
+.get_file__enter_email:focus 
+{
+   border: 1.35px solid #000;
+}
+
+.get_file__button
+{
+   width: 480px;
+   height: 64px;
+   box-sizing: border-box;
+   font: 500 18px 'Montserrat', sans-serif;
+   color: #fff;
+   background-color: #000;
+   border: 1px solid #000;
+   border-radius: 5.39553px;
+}
+
+.get_file__button:hover 
+{
+   border: 1px solid #d647a2;
+   background-color: #d647a2;
+}
