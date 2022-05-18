@@ -54,15 +54,11 @@ function validate(email, name) {
       name.style.borderColor = '#C0C0C0';
    }
 
-   if ((validEmail) && (validName)) {
-      return true;
-   } else {
-      return false;
-   }
+   return validEmail && validName;
 }
 
 popupContent.addEventListener('click', () => {
-   if ((email.value !== '') || (name.value !== '')) {
+   if ((email.value !== '') && (name.value !== '')) {
       validate(email, name)
    }
 })
@@ -85,14 +81,19 @@ sendPopupBtn.addEventListener('click', () => {
             };
 
       async function doFecth() {
-         const response = await fetch("form_handler.hp",
+         const response = await fetch("form_handler.php",
          {
             method: "POST",
             headers: {
-               "Content-type": "application/json; charset=utf-8",
+               "Content-type": "application/json; charset=utf-8"
             },
             body: JSON.stringify(upload)
          });
+
+         // декодировать json и проверить на ошибку
+         json = await response.json()
+         console.log(json);
+
          if (response.ok) {
             popupBg.classList.remove('active');
             popup.classList.remove('active');

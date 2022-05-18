@@ -1,3 +1,4 @@
+<script src="script/script.js" defer></script>
 <section class="form">
    <img src="/images/welcome.svg" class="form__images" alt="">
    <h2 class="form__title">Записаться на курс</h2>
@@ -14,6 +15,6 @@
          <input class="approval_btn" type="checkbox" name="checkbox" id="approval">
          <label class="approval" for="approval">Согласен получать информационные материалы о старте курса</label>
       </div>
-      <input class="form__button"  type="submit" name="send" value="Записаться на курс">
+      <input class="form__button" type="submit" name="send" value="Записаться на курс">
    </form>
 </section>

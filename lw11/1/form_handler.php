@@ -13,7 +13,14 @@ function look()
    $profession = getParameter('profession');
    $checkbox = getParameter('agreement');
 
-   $fp = fopen("./data/$email.txt", 'w+');
+   $fp = fopen("/data/$email.txt", 'w+');
+   // выводить 500 и mesenge через json
+   if ($fp === false)
+   {
+      echo json_encode(['message' => 'файл не открылся', "status" => 500]);
+      return;
+   }
+
    fwrite($fp, 'Email: ');
    fwrite($fp, $email);
    fwrite($fp, "\n");
@@ -34,5 +41,3 @@ function look()
 }
 
 look();
-
-

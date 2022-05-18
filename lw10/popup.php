@@ -1,7 +1,7 @@
 <section class="popup__bg">
    <div class="popup__content">
       <div class="none_column">
-         <img src="/images/welcome.svg" class="popup__images" alt="">
+         <img class="popup__images" src="/images/welcome.svg" alt="">
          <button class="btn_close-popup"><img src="images/close.svg" alt=""></button>
       </div>
       <h2 class="form__title">Записаться на курс</h2>
