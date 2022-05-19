@@ -13,7 +13,7 @@ function look()
    $profession = getParameter('profession');
    $checkbox = getParameter('agreement');
 
-   $fp = fopen("/data/$email.txt", 'w+');
+   $fp = @fopen("./data/$email.txt", 'w+');
    // выводить 500 и mesenge через json
    if ($fp === false)
    {
@@ -38,6 +38,8 @@ function look()
    fwrite($fp, "\n");
 
    fclose($fp);
+   // если php отработал без ошибок, то вывод статуса 200
+   echo json_encode(["status" => 200]);
 }
 
 look();

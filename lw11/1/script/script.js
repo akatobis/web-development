@@ -94,7 +94,7 @@ sendPopupBtn.addEventListener('click', () => {
          json = await response.json()
          console.log(json);
 
-         if (response.ok) {
+         if (response.ok && json.status === 200) {
             popupBg.classList.remove('active');
             popup.classList.remove('active');
             name.value = '';
@@ -108,6 +108,7 @@ sendPopupBtn.addEventListener('click', () => {
             error.classList.add('popup__error-message')
             popup.appendChild(error);
          }
+         
       }
 
       doFecth();
